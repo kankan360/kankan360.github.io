@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[【git】强制覆盖本地代码（与git远程仓库保持一致）]]></title>
+    <url>%2F2019%2F09%2F02%2FGit-Mandatory-overwriting-of-local-code%2F</url>
+    <content type="text"><![CDATA[git强制覆盖：123 git fetch --all git reset --hard origin/master git pull git强制覆盖本地命令（单条执行）：1 git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gulp入门指南]]></title>
+    <url>%2F2019%2F03%2F17%2Fgulp-getting-started%2F</url>
+    <content type="text"><![CDATA[入门指南1. 全局安装 gulp1$ npm install --global gulp 2. 作为项目的开发依赖（devDependencies）安装1$ npm install --save-dev gulp 3. 在项目根目录下创建一个名为 gulpfile.js 的文件12345var gulp = require(&apos;gulp&apos;);gulp.task(&apos;default&apos;, function() &#123; // 将你的默认的任务代码放在这&#125;); 4. 运行 gulp1$ gulp 默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。 想要单独执行特定的任务（task），请输入 gulp 。 gulp API 文档gulp.src(globs[, options])输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。1234gulp.src(&apos;client/templates/*.jade&apos;) .pipe(jade()) .pipe(minify()) .pipe(gulp.dest(&apos;build/minified_templates&apos;)); glob 请参考 node-glob 语法 或者，你也可以直接写文件的路径。globs类型： String 或 Array 所要读取的 glob 或者包含 globs 的数组。 options类型： Object 通过 glob-stream 所传递给 node-glob 的参数。 除了 node-glob 和 glob-stream 所支持的参数外，gulp 增加了一些额外的选项参数： options.buffer类型： Boolean 默认值： true 如果该项被设置为 false，那么将会以 stream 方式返回 file.contents 而不是文件 buffer 的形式。这在处理一些大文件的时候将会很有用。注意：插件可能并不会实现对 stream 的支持。 options.read类型： Boolean 默认值： true 如果该项被设置为 false， 那么 file.contents 会返回空值（null），也就是并不会去读取文件。 options.base类型： String 默认值： 将会加在 glob 之前 (请看 glob2base) 如, 请想像一下在一个路径为 client/js/somedir 的目录中，有一个文件叫 somefile.js ：1234567gulp.src(&apos;client/js/**/*.js&apos;) // 匹配 &apos;client/js/somedir/somefile.js&apos; 并且将 `base` 解析为 `client/js/` .pipe(minify()) .pipe(gulp.dest(&apos;build&apos;)); // 写入 &apos;build/somedir/somefile.js&apos;gulp.src(&apos;client/js/**/*.js&apos;, &#123; base: &apos;client&apos; &#125;) .pipe(minify()) .pipe(gulp.dest(&apos;build&apos;)); // 写入 &apos;build/js/somedir/somefile.js&apos; gulp.dest(path[, options])能被 pipe 进来，并且将会写文件。并且重新输出（emits）所有数据，因此你可以将它 pipe 到多个文件夹。如果某文件夹不存在，将会自动创建它。12345gulp.src(&apos;./client/templates/*.jade&apos;) .pipe(jade()) .pipe(gulp.dest(&apos;./build/templates&apos;)) .pipe(minify()) .pipe(gulp.dest(&apos;./build/minified_templates&apos;)); 文件被写入的路径是以所给的相对路径根据所给的目标目录计算而来。类似的，相对路径也可以根据所给的 base 来计算。 请查看上述的 gulp.src 来了解更多信息。 path类型： String or Function 文件将被写入的路径（输出目录）。也可以传入一个函数，在函数中返回相应路径，这个函数也可以由 vinyl 文件实例 来提供。 options类型： Object options.cwd类型： String 默认值： process.cwd() 输出目录的 cwd 参数，只在所给的输出目录是相对路径时候有效。 options.mode类型： String 默认值： 0777 八进制权限字符，用以定义所有在输出目录中所创建的目录的权限。 gulp.task(name[, deps], fn)定义一个使用 Orchestrator 实现的任务（task）。123gulp.task(&apos;somename&apos;, function() &#123; // 做一些事&#125;); name任务的名字，如果你需要在命令行中运行你的某些任务，那么，请不要在名字中使用空格。 deps类型： Array 一个包含任务列表的数组，这些任务会在你当前任务运行之前完成。123gulp.task(&apos;mytask&apos;, [&apos;array&apos;, &apos;of&apos;, &apos;task&apos;, &apos;names&apos;], function() &#123; // 做一些事&#125;); 注意： 你的任务是否在这些前置依赖的任务完成之前运行了？请一定要确保你所依赖的任务列表中的任务都使用了正确的异步执行方式：使用一个 callback，或者返回一个 promise 或 stream。 fn该函数定义任务所要执行的一些操作。通常来说，它会是这种形式：gulp.src().pipe(someplugin())。 异步任务支持任务可以异步执行，如果 fn 能做到以下其中一点： 接受一个 callback123456789// 在 shell 中执行一个命令var exec = require(&apos;child_process&apos;).exec;gulp.task(&apos;jekyll&apos;, function(cb) &#123; // 编译 Jekyll exec(&apos;jekyll build&apos;, function(err) &#123; if (err) return cb(err); // 返回 error cb(); // 完成 task &#125;);&#125;); 返回一个 stream123456gulp.task(&apos;somename&apos;, function() &#123; var stream = gulp.src(&apos;client/**/*.js&apos;) .pipe(minify()) .pipe(gulp.dest(&apos;build&apos;)); return stream;&#125;); 返回一个 promise123456789101112var Q = require(&apos;q&apos;);gulp.task(&apos;somename&apos;, function() &#123; var deferred = Q.defer(); // 执行异步的操作 setTimeout(function() &#123; deferred.resolve(); &#125;, 1); return deferred.promise;&#125;); 注意： 默认的，task 将以最大的并发数执行，也就是说，gulp 会一次性运行所有的 task 并且不做任何等待。如果你想要创建一个序列化的 task 队列，并以特定的顺序执行，你需要做两件事： 给出一个提示，来告知 task 什么时候执行完毕，并且再给出一个提示，来告知一个 task 依赖另一个 task 的完成。对于这个例子，让我们先假定你有两个 task，”one” 和 “two”，并且你希望它们按照这个顺序执行： 在 “one” 中，你加入一个提示，来告知什么时候它会完成：可以再完成时候返回一个 callback，或者返回一个 promise 或 stream，这样系统会去等待它完成。 在 “two” 中，你需要添加一个提示来告诉系统它需要依赖第一个 task 完成。 因此，这个例子的实际代码将会是这样：1234567891011121314var gulp = require(&apos;gulp&apos;);// 返回一个 callback，因此系统可以知道它什么时候完成gulp.task(&apos;one&apos;, function(cb) &#123; // 做一些事 -- 异步的或者其他的 cb(err); // 如果 err 不是 null 或 undefined，则会停止执行，且注意，这样代表执行失败了&#125;);// 定义一个所依赖的 task 必须在这个 task 执行之前完成gulp.task(&apos;two&apos;, [&apos;one&apos;], function() &#123; // &apos;one&apos; 完成后&#125;);gulp.task(&apos;default&apos;, [&apos;one&apos;, &apos;two&apos;]); gulp.watch(glob [, opts], tasks) 或 gulp.watch(glob [, opts, cb])监视文件，并且可以在文件发生改动时候做一些事情。它总会返回一个 EventEmitter 来发射（emit） change 事件。 gulp.watch(glob[, opts], tasks)glob类型： String or Array 一个 glob 字符串，或者一个包含多个 glob 字符串的数组，用来指定具体监控哪些文件的变动。 opts类型： Object 传给 gaze 的参数。 tasks类型： Array 需要在文件变动后执行的一个或者多个通过 gulp.task() 创建的 task 的名字，1234var watcher = gulp.watch(&apos;js/**/*.js&apos;, [&apos;uglify&apos;,&apos;reload&apos;]);watcher.on(&apos;change&apos;, function(event) &#123; console.log(&apos;File &apos; + event.path + &apos; was &apos; + event.type + &apos;, running tasks...&apos;);&#125;); gulp.watch(glob[, opts, cb])glob类型： String or Array 一个 glob 字符串，或者一个包含多个 glob 字符串的数组，用来指定具体监控哪些文件的变动。 opts类型： Object 传给 gaze 的参数。 cb(event)类型： Function 每次变动需要执行的 callback。123gulp.watch(&apos;js/**/*.js&apos;, function(event) &#123; console.log(&apos;File &apos; + event.path + &apos; was &apos; + event.type + &apos;, running tasks...&apos;);&#125;); callback 会被传入一个名为 event 的对象。这个对象描述了所监控到的变动： event.type类型： String 发生的变动的类型：added, changed 或者 deleted。 event.path类型： String 触发了该事件的文件的路径。]]></content>
+      <categories>
+        <category>gulp</category>
+      </categories>
+      <tags>
+        <tag>gulp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git添加多个远程仓库]]></title>
+    <url>%2F2019%2F02%2F01%2FSubmit-multiple-warehouses-at-a-time%2F</url>
+    <content type="text"><![CDATA[git添加多个远程仓库 配置远程仓库1git remote add origin https://url 添加另外一个远程仓库1git remote set-url --add origin https://url 一次性提交到所有仓库1git push --all]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[自己常用的一些mysql]]></title>
+    <url>%2F2019%2F01%2F31%2FCommonly-used-by-customers%2F</url>
+    <content type="text"><![CDATA[自己常用的一些mysql操作1、把当天出票时间转unix时间戳到某排序字段，方便程序排序1234BEGINupdate jw_items AS jw set jw.chupiao_top = 0;update jw_items AS jw set jw.chupiao_top = unix_timestamp(jw.quchendate) WHERE (jw.chupiaodate = DATE_FORMAT(now(),&apos;%Y/%c/%e&apos;)) AND ishidden &lt;&gt; 1;END 2、定时检测付款状态把未按设置时间段的订单重置1update jw_orders od,jw_config conf,jw_items jw set od.paystate = 3 WHERE (from_unixtime(od.ordertime + conf.order_keeptime*3600) &lt;= NOW()) AND (od.ordertime &gt; 0) AND (jw.id = od.itemsid) AND (od.paystate IN (1,2)) 3、把相关字段日期字符转unix时间戳1unix_timestamp(xxx_field) 4、把字符串日期格式加一天并更新1UPDATE tables SET field = date_format(DATE_ADD(STR_TO_DATE(field,&apos;%Y/%c/%e&apos;),INTERVAL 1 DAY),&apos;%Y/%c/%e&apos;) WHERE id = xxx …… 未完等补充]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql格式化日期]]></title>
+    <url>%2F2019%2F01%2F31%2Fmysql-date-format%2F</url>
+    <content type="text"><![CDATA[mysql格式化日期mysql查询记录如果有时间戳字段时，查看结果不方便，不能即时看到时间戳代表的含义，现提供mysql格式换时间函数，可以方便的看到格式化后的时间。 1.DATE_FORMAT() 函数用于以不同的格式显示日期/时间数据。1DATE_FORMAT(date,format) format参数的格式有 参数 说明 %a 缩写星期名 %b 缩写月名 %c 月，数值 %D 带有英文前缀的月中的天 %d 月的天，数值(00-31) %e 月的天，数值(0-31) %f 微秒 %H 小时 (00-23) %h 小时 (01-12) %I 小时 (01-12) %i 分钟，数值(00-59) %j 年的天 (001-366) %k 小时 (0-23) %l 小时 (1-12) %M 月名 %m 月，数值(00-12) %p AM 或 PM %r 时间，12-小时（hh:mm:ss AM 或 PM） %S 秒(00-59) %s 秒(00-59) %T 时间, 24-小时 (hh:mm:ss) %U 周 (00-53) 星期日是一周的第一天 %u 周 (00-53) 星期一是一周的第一天 %V 周 (01-53) 星期日是一周的第一天，与 %X 使用 %v 周 (01-53) 星期一是一周的第一天，与 %x 使用 %W 星期名 %w 周的天 （0=星期日, 6=星期六） %X 年，其中的星期日是周的第一天，4 位，与 %V 使用 %v 年，其中的星期一是周的第一天，4 位，与 %v 使用 %Y 年，4 位 %y 年，2 位 例子：1234DATE_FORMAT(NOW(),&apos;%b %d %Y %h:%i %p&apos;) DATE_FORMAT(NOW(),&apos;%m-%d-%Y&apos;) DATE_FORMAT(NOW(),&apos;%d %b %y&apos;) DATE_FORMAT(NOW(),&apos;%d %b %Y %T:%f&apos;) 2. MySQL 格式化函数 FROM_UNIXTIME()123SELECT FROM_UNIXTIME(date, &apos;%Y-%c-%d %h:%i:%s&apos; ) as post_date , date_format(NOW(), &apos;%Y-%c-%d %h:%i:%s&apos; ) as post_date_gmt FROM `article` where outkey = &apos;Y&apos; 1、FROM_UNIXTIME( unix_timestamp )参数：一般为10位的时间戳，如:1417363200返回值：有两种，可能是类似 ‘YYYY-MM-DD HH:MM:SS’ 这样的字符串，也有可能是类似于 YYYYMMDDHHMMSS.uuuuuu 这样的数字，具体返回什么取决于该函数被调用的形式。 2、FROM_UNIXTIME( unix_timestamp ，format )参数 unix_timestamp ：与方法 FROM_UNIXTIME( unix_timestamp ) 中的参数含义一样；参数 format : 转换之后的时间字符串显示的格式;返回值：按照指定的时间格式显示的字符串；]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>date_format</tag>
+      </tags>
+  </entry>
+</search>
