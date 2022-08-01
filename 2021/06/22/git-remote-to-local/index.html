@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"kankan360.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Full stack development engineer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="mc notebook">
-<meta property="og:url" content="https://kankan360.github.io/archives/index.html">
+  <meta name="description" content="Git拉取远程仓库的某一分支到本地 a) 本地有其他分支到项目：git checkout -b localfast origin&#x2F;fastgit pull origin fastb)本地没有项目git clone -b 分支名 仓库地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-remote-to-local">
+<meta property="og:url" content="https://kankan360.github.io/2021/06/22/git-remote-to-local/index.html">
 <meta property="og:site_name" content="mc notebook">
-<meta property="og:description" content="Full stack development engineer">
+<meta property="og:description" content="Git拉取远程仓库的某一分支到本地 a) 本地有其他分支到项目：git checkout -b localfast origin&#x2F;fastgit pull origin fastb)本地没有项目git clone -b 分支名 仓库地址">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-22T10:35:55.000Z">
+<meta property="article:modified_time" content="2021-06-22T10:36:15.397Z">
 <meta property="article:author" content="mc">
-<meta property="article:tag" content="Full stack development engineer">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://kankan360.github.io/archives/">
+<link rel="canonical" href="https://kankan360.github.io/2021/06/22/git-remote-to-local/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | mc notebook</title>
+  <title>git-remote-to-local | mc notebook</title>
   
 
 
@@ -157,156 +159,93 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 6 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kankan360.github.io/2021/06/22/git-remote-to-local/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="mc">
+      <meta itemprop="description" content="Full stack development engineer">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mc notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git-remote-to-local
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-22 18:35:55 / 修改时间：18:36:15" itemprop="dateCreated datePublished" datetime="2021-06-22T18:35:55+08:00">2021-06-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-07-25T14:15:48+08:00"
-              content="2022-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/25/golang-gin-html-render/" itemprop="url">
-            <span itemprop="name">gin HTML 渲染</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-07-25T14:05:48+08:00"
-              content="2022-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/25/golang-gin-AsciiJson/" itemprop="url">
-            <span itemprop="name">gin AsciiJSON</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-06-22T18:35:55+08:00"
-              content="2021-06-22">
-          06-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/06/22/git-remote-to-local/" itemprop="url">
-            <span itemprop="name">git-remote-to-local</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-02-01T10:08:13+08:00"
-              content="2019-02-01">
-          02-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/02/01/Submit-multiple-warehouses-at-a-time/" itemprop="url">
-            <span itemprop="name">git添加多个远程仓库</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-01-31T14:18:34+08:00"
-              content="2019-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/01/31/Commonly-used-by-customers/" itemprop="url">
-            <span itemprop="name">自己常用的一些mysql</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-01-31T12:39:29+08:00"
-              content="2019-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019/01/31/mysql-date-format/" itemprop="url">
-            <span itemprop="name">mysql格式化日期</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>Git拉取远程仓库的某一分支到本地</p>
+<p>a) 本地有其他分支到项目：<br>git checkout -b localfast origin&#x2F;fast<br>git pull origin fast<br>b)本地没有项目<br>git clone -b 分支名 仓库地址</p>
 
     </div>
-  </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/01/Submit-multiple-warehouses-at-a-time/" rel="prev" title="git添加多个远程仓库">
+      <i class="fa fa-chevron-left"></i> git添加多个远程仓库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/25/golang-gin-AsciiJson/" rel="next" title="gin AsciiJSON">
+      gin AsciiJSON <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 

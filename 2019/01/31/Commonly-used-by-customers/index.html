@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"kankan360.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="AsciiJSON使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。 12345678910111213func main() &amp;#123;    r :&#x3D; gin.Default()    r.GET(&quot;&#x2F;someJSON&quot;, func(c *gin.Context) &amp;#123;        data :&#x3D; map[strin">
+  <meta name="description" content="自己常用的一些mysql操作1、把当天出票时间转unix时间戳到某排序字段，方便程序排序1234BEGINupdate jw_items AS jw set jw.chupiao_top &#x3D; 0;update jw_items AS jw set jw.chupiao_top &#x3D; unix_timestamp(jw.quchendate) WHERE (jw.chupiaodate &#x3D; DATE_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gin AsciiJSON">
-<meta property="og:url" content="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/index.html">
+<meta property="og:title" content="自己常用的一些mysql">
+<meta property="og:url" content="https://kankan360.github.io/2019/01/31/Commonly-used-by-customers/index.html">
 <meta property="og:site_name" content="mc notebook">
-<meta property="og:description" content="AsciiJSON使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。 12345678910111213func main() &amp;#123;    r :&#x3D; gin.Default()    r.GET(&quot;&#x2F;someJSON&quot;, func(c *gin.Context) &amp;#123;        data :&#x3D; map[strin">
+<meta property="og:description" content="自己常用的一些mysql操作1、把当天出票时间转unix时间戳到某排序字段，方便程序排序1234BEGINupdate jw_items AS jw set jw.chupiao_top &#x3D; 0;update jw_items AS jw set jw.chupiao_top &#x3D; unix_timestamp(jw.quchendate) WHERE (jw.chupiaodate &#x3D; DATE_">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-25T06:05:48.000Z">
-<meta property="article:modified_time" content="2022-07-25T06:11:33.914Z">
+<meta property="article:published_time" content="2019-01-31T06:18:34.000Z">
+<meta property="article:modified_time" content="2022-08-01T01:44:13.724Z">
 <meta property="article:author" content="mc">
-<meta property="article:tag" content="gin">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/">
+<link rel="canonical" href="https://kankan360.github.io/2019/01/31/Commonly-used-by-customers/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>gin AsciiJSON | mc notebook</title>
+  <title>自己常用的一些mysql | mc notebook</title>
   
 
 
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/">
+    <link itemprop="mainEntityOfPage" href="https://kankan360.github.io/2019/01/31/Commonly-used-by-customers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          gin AsciiJSON
+          自己常用的一些mysql
         </h1>
 
         <div class="post-meta">
@@ -188,17 +188,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-25 14:05:48 / 修改时间：14:11:33" itemprop="dateCreated datePublished" datetime="2022-07-25T14:05:48+08:00">2022-07-25</time>
+              <time title="创建时间：2019-01-31 14:18:34" itemprop="dateCreated datePublished" datetime="2019-01-31T14:18:34+08:00">2019-01-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-01 09:44:13" itemprop="dateModified" datetime="2022-08-01T09:44:13+08:00">2022-08-01</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
                 </span>
             </span>
 
@@ -213,8 +219,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="AsciiJSON"><a href="#AsciiJSON" class="headerlink" title="AsciiJSON"></a>AsciiJSON</h2><p>使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">    r := gin.Default()</span><br><span class="line">    r.GET(&quot;/someJSON&quot;, func(c *gin.Context) &#123;</span><br><span class="line">        data := map[string]interface&#123;&#125;&#123;</span><br><span class="line">            &quot;lang&quot;: &quot;GO语言&quot;,</span><br><span class="line">            &quot;tag&quot;:  &quot;&lt;br&gt;&quot;,</span><br><span class="line">        &#125;</span><br><span class="line">        // 输出 : &#123;&quot;lang&quot;:&quot;GO\u8bed\u8a00&quot;,&quot;tag&quot;:&quot;\u003cbr\u003e&quot;&#125;</span><br><span class="line">        c.AsciiJSON(http.StatusOK, data)</span><br><span class="line">    &#125;)</span><br><span class="line">    // 监听并在 0.0.0.0:8080 上启动服务</span><br><span class="line">    r.Run(&quot;:8080&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="自己常用的一些mysql操作"><a href="#自己常用的一些mysql操作" class="headerlink" title="自己常用的一些mysql操作"></a>自己常用的一些mysql操作</h1><h2 id="1、把当天出票时间转unix时间戳到某排序字段，方便程序排序"><a href="#1、把当天出票时间转unix时间戳到某排序字段，方便程序排序" class="headerlink" title="1、把当天出票时间转unix时间戳到某排序字段，方便程序排序"></a>1、把当天出票时间转unix时间戳到某排序字段，方便程序排序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BEGIN</span><br><span class="line">update jw_items AS jw set jw.chupiao_top = 0;</span><br><span class="line">update jw_items AS jw set jw.chupiao_top = unix_timestamp(jw.quchendate) WHERE (jw.chupiaodate = DATE_FORMAT(now(),&#x27;%Y/%c/%e&#x27;)) AND ishidden &lt;&gt; 1;</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、定时检测付款状态把未按设置时间段的订单重置"><a href="#2、定时检测付款状态把未按设置时间段的订单重置" class="headerlink" title="2、定时检测付款状态把未按设置时间段的订单重置"></a>2、定时检测付款状态把未按设置时间段的订单重置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update jw_orders od,jw_config conf,jw_items jw set od.paystate = 3 WHERE (from_unixtime(od.ordertime + conf.order_keeptime*3600) &lt;= NOW()) AND (od.ordertime &gt; 0) AND (jw.id = od.itemsid) AND (od.paystate IN (1,2))</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、把相关字段日期字符转unix时间戳"><a href="#3、把相关字段日期字符转unix时间戳" class="headerlink" title="3、把相关字段日期字符转unix时间戳"></a>3、把相关字段日期字符转unix时间戳</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unix_timestamp(xxx_field)</span><br></pre></td></tr></table></figure>
+<h2 id="4、把字符串日期格式加一天并更新"><a href="#4、把字符串日期格式加一天并更新" class="headerlink" title="4、把字符串日期格式加一天并更新"></a>4、把字符串日期格式加一天并更新</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE tables SET field = date_format(DATE_ADD(STR_TO_DATE(field,&#x27;%Y/%c/%e&#x27;),INTERVAL 1 DAY),&#x27;%Y/%c/%e&#x27;) WHERE id = xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、保留七天日志"><a href="#5、保留七天日志" class="headerlink" title="5、保留七天日志"></a>5、保留七天日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM jw_tablesxxx WHERE op_time &lt; (UNIX_TIMESTAMP(DATE_FORMAT(NOW(),&#x27;%Y-%m-%d&#x27;)) - 604800)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、-删除无关系操作日志"><a href="#6、-删除无关系操作日志" class="headerlink" title="6、 删除无关系操作日志"></a>6、 删除无关系操作日志</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE tb_a FROM jw_xxxx_logs as tb_a INNER JOIN(SELECT jw_xxxx_logs.id FROM jw_items RIGHT JOIN jw_xxxx_logs on jw_xxxs.id = jw_xxxx_logs.jwid WHERE jw_xxxs.id IS NULL) as tb_b on tb_b.id = tb_a.id</span><br></pre></td></tr></table></figure>
+
+<p>……</p>
+<blockquote>
+<p>未完等补充</p>
+</blockquote>
 
     </div>
 
@@ -224,7 +243,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/gin/" rel="tag"># gin</a>
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
           </div>
 
         
@@ -233,12 +252,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/06/22/git-remote-to-local/" rel="prev" title="git-remote-to-local">
-      <i class="fa fa-chevron-left"></i> git-remote-to-local
+    <a href="/2019/01/31/mysql-date-format/" rel="prev" title="mysql格式化日期">
+      <i class="fa fa-chevron-left"></i> mysql格式化日期
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/07/25/golang-gin-html-render/" rel="next" title="gin HTML 渲染">
-      gin HTML 渲染 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/02/01/Submit-multiple-warehouses-at-a-time/" rel="next" title="git添加多个远程仓库">
+      git添加多个远程仓库 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -298,7 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AsciiJSON"><span class="nav-number">1.</span> <span class="nav-text">AsciiJSON</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%B7%B1%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9Bmysql%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">自己常用的一些mysql操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%8A%8A%E5%BD%93%E5%A4%A9%E5%87%BA%E7%A5%A8%E6%97%B6%E9%97%B4%E8%BD%ACunix%E6%97%B6%E9%97%B4%E6%88%B3%E5%88%B0%E6%9F%90%E6%8E%92%E5%BA%8F%E5%AD%97%E6%AE%B5%EF%BC%8C%E6%96%B9%E4%BE%BF%E7%A8%8B%E5%BA%8F%E6%8E%92%E5%BA%8F"><span class="nav-number">1.1.</span> <span class="nav-text">1、把当天出票时间转unix时间戳到某排序字段，方便程序排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%AE%9A%E6%97%B6%E6%A3%80%E6%B5%8B%E4%BB%98%E6%AC%BE%E7%8A%B6%E6%80%81%E6%8A%8A%E6%9C%AA%E6%8C%89%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4%E6%AE%B5%E7%9A%84%E8%AE%A2%E5%8D%95%E9%87%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">2、定时检测付款状态把未按设置时间段的订单重置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%8A%8A%E7%9B%B8%E5%85%B3%E5%AD%97%E6%AE%B5%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E8%BD%ACunix%E6%97%B6%E9%97%B4%E6%88%B3"><span class="nav-number">1.3.</span> <span class="nav-text">3、把相关字段日期字符转unix时间戳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8A%A0%E4%B8%80%E5%A4%A9%E5%B9%B6%E6%9B%B4%E6%96%B0"><span class="nav-number">1.4.</span> <span class="nav-text">4、把字符串日期格式加一天并更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E4%BF%9D%E7%95%99%E4%B8%83%E5%A4%A9%E6%97%A5%E5%BF%97"><span class="nav-number">1.5.</span> <span class="nav-text">5、保留七天日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81-%E5%88%A0%E9%99%A4%E6%97%A0%E5%85%B3%E7%B3%BB%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97"><span class="nav-number">1.6.</span> <span class="nav-text">6、 删除无关系操作日志</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

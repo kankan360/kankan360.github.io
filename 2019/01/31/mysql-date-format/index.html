@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"kankan360.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="AsciiJSON使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。 12345678910111213func main() &amp;#123;    r :&#x3D; gin.Default()    r.GET(&quot;&#x2F;someJSON&quot;, func(c *gin.Context) &amp;#123;        data :&#x3D; map[strin">
+  <meta name="description" content="mysql格式化日期mysql查询记录如果有时间戳字段时，查看结果不方便，不能即时看到时间戳代表的含义，现提供mysql格式换时间函数，可以方便的看到格式化后的时间。 1.DATE_FORMAT() 函数用于以不同的格式显示日期&#x2F;时间数据。1DATE_FORMAT(date,format) format参数的格式有    参数 说明    %a 缩写星期名   %b 缩写月名   %c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gin AsciiJSON">
-<meta property="og:url" content="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/index.html">
+<meta property="og:title" content="mysql格式化日期">
+<meta property="og:url" content="https://kankan360.github.io/2019/01/31/mysql-date-format/index.html">
 <meta property="og:site_name" content="mc notebook">
-<meta property="og:description" content="AsciiJSON使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。 12345678910111213func main() &amp;#123;    r :&#x3D; gin.Default()    r.GET(&quot;&#x2F;someJSON&quot;, func(c *gin.Context) &amp;#123;        data :&#x3D; map[strin">
+<meta property="og:description" content="mysql格式化日期mysql查询记录如果有时间戳字段时，查看结果不方便，不能即时看到时间戳代表的含义，现提供mysql格式换时间函数，可以方便的看到格式化后的时间。 1.DATE_FORMAT() 函数用于以不同的格式显示日期&#x2F;时间数据。1DATE_FORMAT(date,format) format参数的格式有    参数 说明    %a 缩写星期名   %b 缩写月名   %c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-25T06:05:48.000Z">
-<meta property="article:modified_time" content="2022-07-25T06:11:33.914Z">
+<meta property="article:published_time" content="2019-01-31T04:39:29.000Z">
+<meta property="article:modified_time" content="2019-02-05T10:00:25.274Z">
 <meta property="article:author" content="mc">
-<meta property="article:tag" content="gin">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="date_format">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/">
+<link rel="canonical" href="https://kankan360.github.io/2019/01/31/mysql-date-format/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>gin AsciiJSON | mc notebook</title>
+  <title>mysql格式化日期 | mc notebook</title>
   
 
 
@@ -166,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kankan360.github.io/2022/07/25/golang-gin-AsciiJson/">
+    <link itemprop="mainEntityOfPage" href="https://kankan360.github.io/2019/01/31/mysql-date-format/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          gin AsciiJSON
+          mysql格式化日期
         </h1>
 
         <div class="post-meta">
@@ -188,17 +189,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-07-25 14:05:48 / 修改时间：14:11:33" itemprop="dateCreated datePublished" datetime="2022-07-25T14:05:48+08:00">2022-07-25</time>
+              <time title="创建时间：2019-01-31 12:39:29" itemprop="dateCreated datePublished" datetime="2019-01-31T12:39:29+08:00">2019-01-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-02-05 18:00:25" itemprop="dateModified" datetime="2019-02-05T18:00:25+08:00">2019-02-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
                 </span>
             </span>
 
@@ -213,8 +220,148 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="AsciiJSON"><a href="#AsciiJSON" class="headerlink" title="AsciiJSON"></a>AsciiJSON</h2><p>使用 AsciiJSON 生成具有转义的非 ASCII 字符的 ASCII-only JSON。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">    r := gin.Default()</span><br><span class="line">    r.GET(&quot;/someJSON&quot;, func(c *gin.Context) &#123;</span><br><span class="line">        data := map[string]interface&#123;&#125;&#123;</span><br><span class="line">            &quot;lang&quot;: &quot;GO语言&quot;,</span><br><span class="line">            &quot;tag&quot;:  &quot;&lt;br&gt;&quot;,</span><br><span class="line">        &#125;</span><br><span class="line">        // 输出 : &#123;&quot;lang&quot;:&quot;GO\u8bed\u8a00&quot;,&quot;tag&quot;:&quot;\u003cbr\u003e&quot;&#125;</span><br><span class="line">        c.AsciiJSON(http.StatusOK, data)</span><br><span class="line">    &#125;)</span><br><span class="line">    // 监听并在 0.0.0.0:8080 上启动服务</span><br><span class="line">    r.Run(&quot;:8080&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="mysql格式化日期"><a href="#mysql格式化日期" class="headerlink" title="mysql格式化日期"></a>mysql格式化日期</h1><p>mysql查询记录如果有时间戳字段时，查看结果不方便，不能即时看到时间戳代表的含义，现提供mysql格式换时间函数，可以方便的看到格式化后的时间。</p>
+<h2 id="1-DATE-FORMAT-函数用于以不同的格式显示日期-x2F-时间数据。"><a href="#1-DATE-FORMAT-函数用于以不同的格式显示日期-x2F-时间数据。" class="headerlink" title="1.DATE_FORMAT() 函数用于以不同的格式显示日期&#x2F;时间数据。"></a>1.DATE_FORMAT() 函数用于以不同的格式显示日期&#x2F;时间数据。</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATE_FORMAT(date,format)</span><br></pre></td></tr></table></figure>
+<p>format参数的格式有</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%a</td>
+<td>缩写星期名</td>
+</tr>
+<tr>
+<td>%b</td>
+<td>缩写月名</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>月，数值</td>
+</tr>
+<tr>
+<td>%D</td>
+<td>带有英文前缀的月中的天</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>月的天，数值(00-31)</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>月的天，数值(0-31)</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>微秒</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>小时 (00-23)</td>
+</tr>
+<tr>
+<td>%h</td>
+<td>小时 (01-12)</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>小时 (01-12)</td>
+</tr>
+<tr>
+<td>%i</td>
+<td>分钟，数值(00-59)</td>
+</tr>
+<tr>
+<td>%j</td>
+<td>年的天 (001-366)</td>
+</tr>
+<tr>
+<td>%k</td>
+<td>小时 (0-23)</td>
+</tr>
+<tr>
+<td>%l</td>
+<td>小时 (1-12)</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>月名</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>月，数值(00-12)</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>AM 或 PM</td>
+</tr>
+<tr>
+<td>%r</td>
+<td>时间，12-小时（hh:mm:ss AM 或 PM）</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>秒(00-59)</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>秒(00-59)</td>
+</tr>
+<tr>
+<td>%T</td>
+<td>时间, 24-小时 (hh:mm:ss)</td>
+</tr>
+<tr>
+<td>%U</td>
+<td>周 (00-53) 星期日是一周的第一天</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>周 (00-53) 星期一是一周的第一天</td>
+</tr>
+<tr>
+<td>%V</td>
+<td>周 (01-53) 星期日是一周的第一天，与 %X 使用</td>
+</tr>
+<tr>
+<td>%v</td>
+<td>周 (01-53) 星期一是一周的第一天，与 %x 使用</td>
+</tr>
+<tr>
+<td>%W</td>
+<td>星期名</td>
+</tr>
+<tr>
+<td>%w</td>
+<td>周的天 （0&#x3D;星期日, 6&#x3D;星期六）</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>年，其中的星期日是周的第一天，4 位，与 %V 使用</td>
+</tr>
+<tr>
+<td>%v</td>
+<td>年，其中的星期一是周的第一天，4 位，与 %v 使用</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td>年，4 位</td>
+</tr>
+<tr>
+<td>%y</td>
+<td>年，2 位</td>
+</tr>
+</tbody></table>
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DATE_FORMAT(NOW(),&#x27;%b %d %Y %h:%i %p&#x27;) </span><br><span class="line">DATE_FORMAT(NOW(),&#x27;%m-%d-%Y&#x27;)  </span><br><span class="line">DATE_FORMAT(NOW(),&#x27;%d %b %y&#x27;)  </span><br><span class="line">DATE_FORMAT(NOW(),&#x27;%d %b %Y %T:%f&#x27;) </span><br></pre></td></tr></table></figure>
+
+<h2 id="2-MySQL-格式化函数-FROM-UNIXTIME"><a href="#2-MySQL-格式化函数-FROM-UNIXTIME" class="headerlink" title="2. MySQL 格式化函数 FROM_UNIXTIME()"></a>2. MySQL 格式化函数 FROM_UNIXTIME()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT FROM_UNIXTIME(date, &#x27;%Y-%c-%d %h:%i:%s&#x27; ) as post_date ,   </span><br><span class="line">date_format(NOW(), &#x27;%Y-%c-%d %h:%i:%s&#x27; ) as post_date_gmt   </span><br><span class="line">FROM `article`  where outkey = &#x27;Y&#x27; </span><br></pre></td></tr></table></figure>
+
+<h3 id="1、FROM-UNIXTIME-unix-timestamp"><a href="#1、FROM-UNIXTIME-unix-timestamp" class="headerlink" title="1、FROM_UNIXTIME( unix_timestamp )"></a>1、FROM_UNIXTIME( unix_timestamp )</h3><p>参数：一般为10位的时间戳，如:1417363200<br>返回值：有两种，可能是类似 ‘YYYY-MM-DD HH:MM:SS’ 这样的字符串，也有可能是类似于 YYYYMMDDHHMMSS.uuuuuu 这样的数字，具体返回什么取决于该函数被调用的形式。</p>
+<h3 id="2、FROM-UNIXTIME-unix-timestamp-，format"><a href="#2、FROM-UNIXTIME-unix-timestamp-，format" class="headerlink" title="2、FROM_UNIXTIME( unix_timestamp ，format )"></a>2、FROM_UNIXTIME( unix_timestamp ，format )</h3><p>参数 unix_timestamp ：与方法 FROM_UNIXTIME( unix_timestamp ) 中的参数含义一样；<br>参数 format : 转换之后的时间字符串显示的格式;<br>返回值：按照指定的时间格式显示的字符串；</p>
 
     </div>
 
@@ -224,7 +371,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/gin/" rel="tag"># gin</a>
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+              <a href="/tags/date-format/" rel="tag"># date_format</a>
           </div>
 
         
@@ -232,13 +380,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/06/22/git-remote-to-local/" rel="prev" title="git-remote-to-local">
-      <i class="fa fa-chevron-left"></i> git-remote-to-local
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/25/golang-gin-html-render/" rel="next" title="gin HTML 渲染">
-      gin HTML 渲染 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/01/31/Commonly-used-by-customers/" rel="next" title="自己常用的一些mysql">
+      自己常用的一些mysql <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -298,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AsciiJSON"><span class="nav-number">1.</span> <span class="nav-text">AsciiJSON</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F"><span class="nav-number">1.</span> <span class="nav-text">mysql格式化日期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-DATE-FORMAT-%E5%87%BD%E6%95%B0%E7%94%A8%E4%BA%8E%E4%BB%A5%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%BC%E5%BC%8F%E6%98%BE%E7%A4%BA%E6%97%A5%E6%9C%9F-x2F-%E6%97%B6%E9%97%B4%E6%95%B0%E6%8D%AE%E3%80%82"><span class="nav-number">1.1.</span> <span class="nav-text">1.DATE_FORMAT() 函数用于以不同的格式显示日期&#x2F;时间数据。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-MySQL-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%87%BD%E6%95%B0-FROM-UNIXTIME"><span class="nav-number">1.2.</span> <span class="nav-text">2. MySQL 格式化函数 FROM_UNIXTIME()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81FROM-UNIXTIME-unix-timestamp"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、FROM_UNIXTIME( unix_timestamp )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81FROM-UNIXTIME-unix-timestamp-%EF%BC%8Cformat"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、FROM_UNIXTIME( unix_timestamp ，format )</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
